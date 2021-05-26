@@ -1,5 +1,52 @@
+const generateCards = employeeArray => {
+    return `
+        ${employeeArray
+            .filter (role => role === "Manager")
+            .map(({ name, role, id, email, officeNumber }) => {
+                return `
+                <div class="card">
+                    <h2>${name}</h2>
+                    <h3>${role}</h3>
+                    <p>ID: ${id}</p>
+                    <p>Email: <a href="mailto:${email}">${email}</a></p>
+                    <p>Office Number: ${officeNumber}</p>
+                </div>
+                `
+            })
+        }
+        ${employeeArray
+            .filter (role => role === "Engineer")
+            .map(({ name, role, id, email, github }) => {
+                return `
+                <div class="card">
+                    <h2>${name}</h2>
+                    <h3>${role}</h3>
+                    <p>ID: ${id}</p>
+                    <p>Email: <a href="mailto:${email}">${email}</a></p>
+                    <p>GitHub: <a href="https://github.com/${github}">${github}</a></p>
+                </div>
+                `
+            })
+        }
+        ${employeeArray
+            .filter (role => role === "Intern")
+            .map(({ name, role, id, email, school }) => {
+                return `
+                <div class="card">
+                    <h2>${name}</h2>
+                    <h3>${role}</h3>
+                    <p>ID: ${id}</p>
+                    <p>Email: <a href="mailto:${email}">${email}</a></p>
+                    <p>School: ${school}</p>
+                </div>
+                `
+            })
+        }
+    `
+}
+
 module.exports = htmlTemplate => {
-    const { manager, engineer, intern } = htmlTemplate;
+    const { employees } = htmlTemplate;
 
     return `
     <!DOCTYPE html>
@@ -13,6 +60,9 @@ module.exports = htmlTemplate => {
     </head>
     <body>
         <h1>My Team</h1>
+        <div class="employee-cards>
+            ${generateCards(employees)}
+        </div>
     </body>
     </html>
     `
