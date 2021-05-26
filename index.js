@@ -1,4 +1,6 @@
 const inquirer = require("inquirer")
+const generateHTML = require("./src/page-template.js");
+const writeFile = require("./utils/generate-site.js");
 
 const promptUser = employeeArray => {
     if (!employeeArray) {
@@ -6,6 +8,12 @@ const promptUser = employeeArray => {
     }
 
     return inquirer.prompt([
+        {
+            type: "list",
+            name: "role",
+            message: "What is the employee's role?",
+            choices: ["Manager", "Engineer", "Intern"],
+        },
         {
             type: "input",
             name: "name",
@@ -44,12 +52,6 @@ const promptUser = employeeArray => {
                     return false;
                 }
             }
-        },
-        {
-            type: "list",
-            name: "role",
-            message: "What is the employee's role?",
-            choices: ["Manager", "Engineer", "Intern"],
         },
         {
             type: "input",
@@ -112,5 +114,14 @@ const promptUser = employeeArray => {
 
 promptUser()
 .then(employeeArray => {
-    console.log(employeeArray);
+    return generateHTML(employeeArray);
+})
+.then(employeeHTML => {
+    return writeFile(employeeHTML);
+})
+.then(writeFileResponse => {
+    console.log(writeFileResponse);
+})
+.catch(err => {
+    console.log(err);
 })

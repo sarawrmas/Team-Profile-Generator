@@ -1,7 +1,7 @@
 const generateCards = employeeArray => {
     return `
         ${employeeArray
-            .filter (role => role === "Manager")
+            .filter(({ role }) => role === "Manager")
             .map(({ name, role, id, email, officeNumber }) => {
                 return `
                 <div class="card">
@@ -15,7 +15,7 @@ const generateCards = employeeArray => {
             })
         }
         ${employeeArray
-            .filter (role => role === "Engineer")
+            .filter(({ role }) => role === "Engineer")
             .map(({ name, role, id, email, github }) => {
                 return `
                 <div class="card">
@@ -29,7 +29,7 @@ const generateCards = employeeArray => {
             })
         }
         ${employeeArray
-            .filter (role => role === "Intern")
+            .filter(({ role }) => role === "Intern")
             .map(({ name, role, id, email, school }) => {
                 return `
                 <div class="card">
@@ -45,9 +45,7 @@ const generateCards = employeeArray => {
     `
 }
 
-module.exports = htmlTemplate => {
-    const { employees } = htmlTemplate;
-
+module.exports = employees => {
     return `
     <!DOCTYPE html>
     <html lang="en">
@@ -60,9 +58,9 @@ module.exports = htmlTemplate => {
     </head>
     <body>
         <h1>My Team</h1>
-        <div class="employee-cards>
-            ${generateCards(employees)}
-        </div>
+        <main>
+        ${generateCards(employees)}
+        </main>
     </body>
     </html>
     `
