@@ -1,48 +1,37 @@
-const Manager = require('../lib/Manager.js');
-// jest.mock('../lib/Manager.js');
+const Manager = require("../lib/Manager.js");
+// jest.mock("../lib/Manager.js");
 
-test('creates an manager object', () => {
-    const manager = new Manager('John', 90, "John@gmail.com");
+test("creates an manager object", () => {
+    const manager = new Manager("John", 90, "John@gmail.com", 10);
 
-    expect(manager.name).toBe('John');
+    expect(manager.name).toEqual(expect.any(String));
     expect(manager.id).toEqual(expect.any(Number));
     expect(manager.email).toEqual(expect.any(String));
-    expect(manager.role).toBe('Manager');
+    expect(manager.officeNumber).toEqual(expect.any(Number));
+    expect(manager.role).toEqual(expect.any(String));
 })
 
-// test('gets manager name', () => {
-//     const manager = new Manager('John');
+test("gets manager name", () => {
+    const manager = new Manager("John", 90, "John@gmail.com", 10);
 
-//     expect(manager.name).toBe('John');
-//     expect(manager.getName()).toHaveProperty('name');
-// });
+    expect(manager.getName()).toBe("John");
+});
 
-// test('gets manager id', () => {
-//     const manager = new Manager('John');
-//     manager.id = 50;
+test("gets manager id", () => {
+    const manager = new Manager("John", 90, "John@gmail.com", 10);
 
-//     expect(manager.id).toEqual(expect.any(Number));
-//     expect(manager.getId()).toHaveProperty('id');
-// });
+    expect(manager.getId()).toBe(90);
+});
 
-// test('gets manager email', () => {
-//     const manager = new Manager('John');
-//     manager.email = "john@gmail.com"
+test("gets manager email", () => {
+    const manager = new Manager("John", 90, "John@gmail.com", 10);
 
-//     expect(manager.email).toEqual(expect.any(String));
-//     expect(manager.getEmail()).toHaveProperty('email');
-// });
+    expect(manager.getEmail()).toBe("John@gmail.com", 10);
+});
 
-// test('gets manager role', () => {
-//     const manager = new Manager('John');
+test("gets manager role", () => {
+    const manager = new Manager("John", 90, "John@gmail.com", 10);
 
-//     expect(manager.getRole()).toBe('Manager');
-//     expect(manager.getRole()).toHaveProperty('role');
-// });
-
-// test('gets manager github', () => {
-//     const manager = new Manager('John');
-//     manager.officeNumber = 89;
-
-//     expect(manager.officeNumber).toEqual(expect.any(Number));
-// });
+    expect(manager.getRole()).toBe("Manager");
+    console.log(manager);
+});

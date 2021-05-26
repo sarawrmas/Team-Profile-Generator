@@ -1,49 +1,43 @@
-const Intern = require('../lib/Intern.js');
-// jest.mock('../lib/Intern.js');
+const Intern = require("../lib/Intern.js");
+// jest.mock("../lib/Intern.js");
 
-test('creates an intern object', () => {
-    const intern = new Intern('John', 90, "John@gmail.com");
+test("creates an intern object", () => {
+    const intern = new Intern("John", 90, "John@gmail.com", "UCLA");
 
-    expect(intern.name).toBe('John');
+    expect(intern.name).toEqual(expect.any(String));
     expect(intern.id).toEqual(expect.any(Number));
     expect(intern.email).toEqual(expect.any(String));
-    expect(intern.role).toBe('Intern');
+    expect(intern.school).toEqual(expect.any(String));
+    expect(intern.role).toEqual(expect.any(String));
 })
 
-// test('gets intern name', () => {
-//     const intern = new Intern('John');
+test("gets intern name", () => {
+    const intern = new Intern("John", 90, "John@gmail.com", "UCLA");
 
-//     expect(intern.name).toBe('John');
-//     expect(intern.getName()).toHaveProperty('name');
-// });
+    expect(intern.getName()).toBe("John");
+});
 
-// test('gets intern id', () => {
-//     const intern = new Intern('John');
-//     intern.id = 50;
+test("gets intern id", () => {
+    const intern = new Intern("John", 90, "John@gmail.com", "UCLA");
 
-//     expect(intern.id).toEqual(expect.any(Number));
-//     expect(intern.getId()).toHaveProperty('id');
-// });
+    expect(intern.getId()).toBe(90);
+});
 
-// test('gets intern email', () => {
-//     const intern = new Intern('John');
-//     intern.email = "john@gmail.com"
+test("gets intern email", () => {
+    const intern = new Intern("John", 90, "John@gmail.com", "UCLA");
 
-//     expect(intern.email).toEqual(expect.any(String));
-//     expect(intern.getEmail()).toHaveProperty('email');
-// });
+    expect(intern.getEmail()).toBe("John@gmail.com");
+});
 
-// test('gets intern role', () => {
-//     const intern = new Intern('John');
+test("gets intern role", () => {
+    const intern = new Intern("John", 90, "John@gmail.com", "UCLA");
 
-//     expect(intern.getRole()).toBe('Intern');
-//     expect(intern.getRole()).toHaveProperty('role');
-// });
+    expect(intern.getRole()).toBe("Intern");
+    console.log(intern);
+});
 
-// test('gets intern school', () => {
-//     const intern = new Intern('John');
-//     intern.school = "UCLA";
+test("gets intern school", () => {
+    const intern = new Intern("John", 90, "John@gmail.com", "UCLA");
 
-//     expect(intern.school).toEqual(expect.any(String));
-//     expect(intern.getSchool()).toHaveProperty('school');
-// });
+    expect(intern.getSchool()).toBe("UCLA");
+})

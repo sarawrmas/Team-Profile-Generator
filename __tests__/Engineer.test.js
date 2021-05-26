@@ -1,49 +1,43 @@
-const Engineer = require('../lib/Engineer.js');
-// jest.mock('../lib/Engineer.js');
+const Engineer = require("../lib/Engineer.js");
+// jest.mock("../lib/Engineer.js");
 
-test('creates an engineer object', () => {
-    const engineer = new Engineer('John', 90, "John@gmail.com");
+test("creates an engineer object", () => {
+    const engineer = new Engineer("John", 90, "John@gmail.com", "JohnHub");
 
-    expect(engineer.name).toBe('John');
+    expect(engineer.name).toEqual(expect.any(String));
     expect(engineer.id).toEqual(expect.any(Number));
     expect(engineer.email).toEqual(expect.any(String));
-    expect(engineer.role).toBe('Engineer');
+    expect(engineer.github).toEqual(expect.any(String));
+    expect(engineer.role).toEqual(expect.any(String));
 })
 
-// test('gets engineer name', () => {
-//     const engineer = new Engineer('John');
+test("gets engineer name", () => {
+    const engineer = new Engineer("John", 90, "John@gmail.com", "JohnHub");
 
-//     expect(engineer.name).toBe('John');
-//     expect(engineer.getName()).toHaveProperty('name');
-// });
+    expect(engineer.getName()).toBe("John");
+});
 
-// test('gets engineer id', () => {
-//     const engineer = new Engineer('John');
-//     engineer.id = 50;
+test("gets engineer id", () => {
+    const engineer = new Engineer("John", 90, "John@gmail.com", "JohnHub");
 
-//     expect(engineer.id).toEqual(expect.any(Number));
-//     expect(engineer.getId()).toHaveProperty('id');
-// });
+    expect(engineer.getId()).toBe(90);
+});
 
-// test('gets engineer email', () => {
-//     const engineer = new Engineer('John');
-//     engineer.email = "john@gmail.com"
+test("gets engineer email", () => {
+    const engineer = new Engineer("John", 90, "John@gmail.com", "JohnHub");
 
-//     expect(engineer.email).toEqual(expect.any(String));
-//     expect(engineer.getEmail()).toHaveProperty('email');
-// });
+    expect(engineer.getEmail()).toBe("John@gmail.com");
+});
 
-// test('gets engineer role', () => {
-//     const engineer = new Engineer('John');
+test("gets engineer role", () => {
+    const engineer = new Engineer("John", 90, "John@gmail.com", "JohnHub");
 
-//     expect(engineer.getRole()).toBe('Engineer');
-//     expect(engineer.getRole()).toHaveProperty('role');
-// });
+    expect(engineer.getRole()).toBe("Engineer");
+    console.log(engineer);
+});
 
-// test('gets engineer github', () => {
-//     const engineer = new Engineer('John');
-//     engineer.github = "johnhub";
+test("gets engineer github", () => {
+    const engineer = new Engineer("John", 90, "John@gmail.com", "JohnHub");
 
-//     expect(engineer.github).toEqual(expect.any(String));
-//     expect(engineer.getGithub()).toHaveProperty('github');
-// });
+    expect(engineer.getGithub()).toBe("JohnHub");
+})
