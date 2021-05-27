@@ -2,9 +2,11 @@
 
 ## Table of Contents
 * [Description](#description)
+* [Languages](#languages)
 * [Installation](#installation)
 * [Usage](#usage)
 * [Demonstration](#demonstration)
+* [Example](#example)
 * [Contributing](#contributing)
 * [Tests](#tests)
 * [Questions](#questions)
@@ -15,7 +17,7 @@ As a manager, you want to generate a webpage that displays your team's basic inf
 
 Simply respond to a few command line prompts, adding as many employees as you'd like, and a styled HTML file will be generated for you.
 
-The HTML file will contain separate cards with all of your employees' info, including their
+The HTML file will contain separate cards with all of your employees' info, including:
 * name
 * role
 * employee ID
@@ -27,6 +29,17 @@ The HTML file will contain separate cards with all of your employees' info, incl
 Clicking on a given employee's email will open the email app of your choice with their email already filled in the recipient field. Clicking on an engineer's GitHub name will take you directly to their GitHub profile.
 
 With all of your employees' contact information in one place, it is easy to find whatever information you are looking for, all in one webpage.
+
+## Languages
+This application was built using:
+* JavaScript
+* HTML
+* CSS
+* Node/NPM
+* Inquirer
+* Jest
+* OOP (Object Oriented Programming)
+* TDD (Test-Driven Development)
 
 ## Installation
 1. **Copy Link:** Hit the "Code" button within this GitHub repo to copy link
@@ -43,7 +56,12 @@ Within the directory for this project, start the game by using the command "node
 Once completed, navigate to the 'dist' subdirectory to find your new team profile!
 
 ## Demonstration
-Watch [this demo](https://www.youtube.com/watch?v=) to see the Team Profile Generator in action.
+Watch [this demo](https://www.youtube.com/watch?v=EScxEerupjQ) to see the Team Profile Generator in action.
+
+## Example
+This is an example of what your team page will look like when it is generated:
+!["example shot"](assets/screenshot.png)
+
 
 ## Contributing
 If you see something in the generator that could be improved, such as additional functionality, features, or even styling, you can submit bug and feature requests, or make pull requests with updated code so I can review your changes.
