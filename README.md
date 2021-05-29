@@ -56,7 +56,7 @@ Within the directory for this project, start the game by using the command "node
 Once completed, navigate to the 'dist' subdirectory to find your new team profile!
 
 ## Demonstration
-Watch [this demo](https://www.youtube.com/watch?v=EScxEerupjQ) to see the Team Profile Generator in action.
+Watch [this demo](https://www.youtube.com/watch?v=dMo19n1HuU4) to see the Team Profile Generator in action!
 
 ## Example
 This is an example of what your team page will look like when it is generated:
